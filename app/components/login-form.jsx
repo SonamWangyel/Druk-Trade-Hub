@@ -6,7 +6,7 @@ const LoginForm = ({ onLogin }) => {
   const Router = useRouter()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // Define showPassword state
+  const [showPassword, setShowPassword] = useState(false); 
   const [loginError, setLoginError] = useState("");
 
   const handleSubmit = async (e) => {
@@ -43,10 +43,10 @@ const LoginForm = ({ onLogin }) => {
       <input
         type="text"
         id="email"
-        placeholder="Username or email"
+        placeholder="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300"
+        className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-gray-300"
       />
       <label htmlFor="password" className="sr-only">
         Password
@@ -58,7 +58,7 @@ const LoginForm = ({ onLogin }) => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300"
+          className="border border-gray-300 rounded-md py-2 px-6 focus:outline-none focus:ring-2 focus:ring-black hover:bg-gray-300"
         />
         {/* Password visibility toggle */}
         <div
@@ -71,7 +71,7 @@ const LoginForm = ({ onLogin }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="black"
             >
               <path
                 strokeLinecap="round"
@@ -111,12 +111,9 @@ const LoginForm = ({ onLogin }) => {
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <a href="#" className="text-black-600 hover:underline font-bold">
-          Forgot password?
-        </a>
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
+          className="bg-blue-500 text-white py-2 px-28 rounded-md hover:bg-blue-600 transition-colors items-center justify-center flex flex-col"
         >
           Login
         </button>

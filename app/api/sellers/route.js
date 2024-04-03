@@ -12,7 +12,7 @@ export async function POST(req) {
 	const body = await req.json()
 	const {storeName, storeLocation , userId} = body;
 	const data = await knex('sellers').insert({
-		company_name : storeName,
+		company_name: storeName,
 		location : storeLocation,
         user_id :userId
 	})

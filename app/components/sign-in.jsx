@@ -1,61 +1,5 @@
 "use client";
 
-// import React, { useState } from 'react';
-
-// function SignIn() {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [confirmPassword, setConfirmPassword] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log('Email:', email);
-//     console.log('Password:', password);
-//     console.log('Confirm Password:', confirmPassword);
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label>
-//         Email:
-//         <input
-//           type="email"
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//           required
-//         />
-//       </label>
-//       <br />
-//       <label>
-//         Password:
-//         <input
-//           type="password"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//           required
-//         />
-//       </label>
-//       <br />
-//       <label>
-//         Confirm Password:
-//         <input
-//           type="password"
-//           value={confirmPassword}
-//           onChange={(e) => setConfirmPassword(e.target.value)}
-//           required
-//         />
-//       </label>
-//       <br />
-//       <button type="submit">Sign In</button>
-//     </form>
-//   );
-// }
-
-// export default SignIn;
-
-
-// 
-
 import React, { useState } from 'react';
 
 function SignIn() {
@@ -74,11 +18,11 @@ function SignIn() {
     console.log('Address:', address);
     console.log('Password:', password);
     console.log('Confirm Password:', confirmPassword);
-    // Add your logic for signing in here, such as making an API call
+
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 text-black text-bold">
       <label htmlFor="firstname" className="block">
         Firstname:
         <input
