@@ -1,24 +1,20 @@
 import knex from '@/app/database'
 
-export async function GET(req) {
-    const { role } = req.query
-    let data;
-    if (role === 'buyer' || role === 'seller') {
-        data = await knex('users')
-            .where('role', '=', role);
-    } else {
-        return new Response("Invalid type parameter. Please specify 'buyer' or 'seller'", { status: 400 });
-    }
-    return new Response(JSON.stringify({ data }));
+export async function GET(request) {
+    const searchParams = request.nextUrl.searchParams
+    const userId = searchParams.get('user_id')
+	const data = await (userId === null ? knex ('users').select('*') : knex('users').where('user_id',userId).select('*') )
+	return Response.json({ data })
 }
 
 export async function PUT(req, { params }) {
 	const body = await req.json()
-	const { name , email , role } = body;
+	const { firstname , lastname, email , address } = body;
 	const data = await knex('users').where('id', params.id).update({
-		name,
+		firstname,
+        lastname,
 		email,
-		role
+		address
 	})
 	return Response.json({ data })
 }
