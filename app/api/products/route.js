@@ -6,7 +6,7 @@ export async function GET (request){
 	const sellerId = searchParams.get('seller_id') 
 
 	var query = knex('products')
-		if (categoryId) query = query.where('category_id',categoryId)
+		if (categoryId) query = query.where('category_id',categoryId)	
 		if (sellerId) query = query.where('seller_id', sellerId)
 		if (sellerId  || categoryId === null) query = query.select('*')
 

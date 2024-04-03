@@ -1,21 +1,24 @@
 import knex from '@/app/database'
+
 export async function GET(request) {
     const searchParams = request.nextUrl.searchParams
-    const orderId = searchParams.get('order.id')
-    const data = await (orderId === null ? knex ('orders').select('*') : knex('orders').where('order.id', orderId). join('user', 'orders.buyer_id', 'user.id'))
+    const orderId = searchParams.get('orders_id')
+    const data = await (orderId === null ? knex ('orders').join('products','orders.product_id', 'products.id').select('orders.*', 'products.name') : knex('orders').where('orders.id', orderId).join('products','orders.product_id', 'products.id').select('orders.*', 'products.name'))
     return Response.json({data})
 }
 export async function POST(request) {
-	const { buyer_id, product_id, quantity, total_price, status} = await request.json()
-
+	
+	const { buyer_id, product_id, quantity, status} = await request.json()
+	var { price } = await knex('products').where('id', product_id).first('price')
+	const totalPrice = price * quantity
 	try {
 		const result = await knex('orders')
 			.insert({
-				buyer_id,
+				buyer_id ,
 				product_id,
 				quantity,
-                total_price,
-                status,
+				total_price : totalPrice,
+				status,
 
 			})
 			.returning('*')
@@ -25,4 +28,4 @@ export async function POST(request) {
 		return new Response(e.detail || e.message, { status: 400 })
 	}
 
-}
+	}
