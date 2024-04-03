@@ -12,9 +12,7 @@ export async function GET (request){
 
 	const data = await query.select('*')
 	return Response.json({ data })
-
 }
-
 
 export async function  POST(req) {
 	const body = await req.json()
