@@ -1,32 +1,3 @@
-// import knex from '@/app/database'
-// import { pbkdf2Sync } from 'crypto';
-
-// export async function POST(req) {
-// 	const { firstname, lastname,email,password } = await req.json();
-
-// // 	const [foundUser] = await knex('users')
-// // 		.where('name', username)
-// // 		.select('*');
-// // console.log(foundUser)
-// // 	if (!foundUser) {
-// // 		return new Response('User not found', { status: 404 });
-// // 	}
-
-// 	const hashedPassword = pbkdf2Sync(password, foundUser.salt, 1000, 64, 'sha512').toString('hex');
-
-// 	if (hashedPassword !== foundUser.hash) {
-// 		return new Response("Bad login", { status: 400 })
-// 	}
-
-// 	return Response.json({ data: { 
-//         firstname: foundUser.firstname,
-//         lastname: foundUser.lastname,
-//         email:foundUser.email,
-//         password: foundUser.password 
-//     },
-//  });
-
-//     }
 
 import knex from '@/app/database';
 import { pbkdf2Sync, randomBytes } from 'crypto';

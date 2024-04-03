@@ -15,6 +15,6 @@ export async function PUT(req, { params }) {
         lastname,
 		email,
 		address
-	})
-	return Response.json({ data })
+	}).returning('*')
+	return Response.json({ data: data })
 }
