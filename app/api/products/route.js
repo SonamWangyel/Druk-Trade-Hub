@@ -4,13 +4,11 @@ export async function GET (request){
     const searchParams = request.nextUrl.searchParams
 	const categoryId = searchParams.get('category_id')
 	const sellerId = searchParams.get('seller_id') 
-
 	var query = knex('products')
-		if (categoryId) query = query.where('category_id',categoryId)	
-		if (sellerId) query = query.where('seller_id', sellerId)
-		if (sellerId  || categoryId === null) query = query.select('*')
-
+	if (categoryId) query = query.where('category_id',categoryId)	
+	if (sellerId) query = query.where('seller_id', sellerId)
 	const data = await query.select('*')
+	console.log(data)
 	return Response.json({ data })
 }
 
@@ -27,3 +25,4 @@ export async function  POST(req) {
 	})
 	return Response.json({data})
 }
+
