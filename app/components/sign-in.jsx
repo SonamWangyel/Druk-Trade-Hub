@@ -31,7 +31,7 @@ function SignIn() {
           value={firstname}
           onChange={(e) => setFirstname(e.target.value)}
           required
-          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300 w-full"
+          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-100 w-full"
         />
       </label>
       <label htmlFor="lastname" className="block">
@@ -42,7 +42,7 @@ function SignIn() {
           value={lastname}
           onChange={(e) => setLastname(e.target.value)}
           required
-          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300 w-full"
+          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-100 w-full"
         />
       </label>
       <label htmlFor="email" className="block">
@@ -53,7 +53,7 @@ function SignIn() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300 w-full"
+          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-100 w-full"
         />
       </label>
       <label htmlFor="address" className="block">
@@ -64,7 +64,7 @@ function SignIn() {
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           required
-          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300 w-full"
+          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-100 w-full"
         />
       </label>
       <label htmlFor="password" className="block">
@@ -75,7 +75,7 @@ function SignIn() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300 w-full"
+          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-100 w-full"
         />
       </label>
       <label htmlFor="confirmPassword" className="block">
@@ -86,7 +86,7 @@ function SignIn() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
-          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-300 w-full"
+          className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-violet-100 w-full"
         />
       </label>
       <button

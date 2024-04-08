@@ -9,6 +9,7 @@ const LoginForm = ({ onLogin }) => {
   const [showPassword, setShowPassword] = useState(false); 
   const [loginError, setLoginError] = useState("");
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -43,10 +44,10 @@ const LoginForm = ({ onLogin }) => {
       <input
         type="text"
         id="email"
-        placeholder="email"
+        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-black hover:bg-gray-300"
+        className="border border-black-300 rounded-md py-2 px-7 focus:outline-none focus:ring-2 focus:ring-black text-center  hover:bg-green-200"
       />
       <label htmlFor="password" className="sr-only">
         Password
@@ -57,12 +58,15 @@ const LoginForm = ({ onLogin }) => {
           id="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border border-gray-300 rounded-md py-2 px-6 focus:outline-none focus:ring-2 focus:ring-black hover:bg-gray-300"
+          onChange={(e) => {
+            setLoginError('')
+            setPassword(e.target.value)
+          }}
+          className="border border-black-300 rounded-md py-2 px-10 focus:outline-none focus:ring-2 text-center  focus:ring-black hover:bg-green-200"
         />
         {/* Password visibility toggle */}
         <div
-          className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 cursor-pointer"
+          className="absolute inset-y-0 right-0 pr-3 flex items-center text-black-400 cursor-pointer"
           onClick={() => setShowPassword(!showPassword)}
         >
           {showPassword ? (
@@ -110,20 +114,24 @@ const LoginForm = ({ onLogin }) => {
           )}
         </div>
       </div>
+      <div className="text-center">{loginError && <p className="text-black text-bold">{loginError}</p>}</div>
+      <div className="flex flex-col flex items-center justify-center">
+        </div>
       <div className="flex items-center justify-between">
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-28 rounded-md hover:bg-blue-600 transition-colors items-center justify-center flex flex-col"
+          className="bg-red-500 text-white py-2 px-32 rounded-md hover:bg-blue-600 transition-colors items-center justify-center flex flex-col"
         >
           Login
         </button>
       </div>
-      <p className="text-center text-black">
+      <p className="text-center font-semibold text-white">
         Are you new?{" "}
-        <a href="/pages/signUp" className="text-white font-bold hover:underline">
+        <a href="/pages/signUp" className="text-indigo-600 hover:underline">
           Create an Account
         </a>
       </p>
+    
     </form>
   );
 };
