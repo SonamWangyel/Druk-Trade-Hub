@@ -1,6 +1,3 @@
-
-
-
 "use client";
 
 import { useState } from "react";
@@ -23,7 +20,7 @@ export default function SignUp() {
   };
 
   const handleSubmit = async () => {
-    // Add your form submission logic here
+    
     if (formData.firstName && formData.lastName && formData.email && formData.password && formData.confirmPassword) {
       const res = await fetch('/api/users/signup', {
         method: 'POST',
@@ -40,7 +37,7 @@ export default function SignUp() {
       } else {
         setSubmitted(true);
       }
-      // After submission, you can redirect the user to the login screen or reset the form
+    
     }
   };
 
@@ -49,9 +46,9 @@ export default function SignUp() {
       className="min-h-screen flex items-center justify-center bg-cover backgroundPosition-center"
       style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2019/11/15/13/03/bhutan-4628373_1280.jpg')` }}
     >
-      <div className="max-w-md w-full space-y-4 bg-white bg-opacity-30 p-8 rounded-3xl text-black">
+      <div className=" mb-3 p-7 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center flex flex-col space-y-4 bg-orange-500/50  rounded-3xl text-black font-bold">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-black font-italic">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-black">
             Sign Up
           </h2>
         </div>
@@ -137,7 +134,7 @@ export default function SignUp() {
         </div>
         <button
           type="button"
-          className="w-full py-2 px-4 border border-solid bg-blue-500 rounded-md shadow-sm text-sm font-medium text-black hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="w-full py-2 px-4 border border-solid bg-green-500 rounded-md shadow-sm text-sm font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
           onClick={handleSubmit}
         >
           Sign Up
@@ -147,7 +144,7 @@ export default function SignUp() {
             Thank you for signing up! Please return to the{" "}
             <a
               href="/"
-              className="font-medium text-black font-bold  hover:underline"
+              className="font-medium text-red font-bold  hover:underline"
             >
               Login
             </a>{" "}
