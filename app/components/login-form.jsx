@@ -47,14 +47,14 @@ const LoginForm = ({ onLogin }) => {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border border-black-300 rounded-md py-2 px-7 focus:outline-none focus:ring-2 focus:ring-black text-center  hover:bg-green-200"
+        className="border border-black-300 rounded-md py-2 px-7 focus:outline-none focus:ring-2 focus:ring-black text-center  hover:bg-green-200 text-black"
       />
       <label htmlFor="password" className="sr-only">
         Password
       </label>
       <div className="relative">
         <input
-          type={showPassword ? "text" : "password"} // Toggle password visibility
+          type={showPassword ? "text" : "password"} 
           id="password"
           placeholder="Password"
           value={password}
@@ -62,9 +62,9 @@ const LoginForm = ({ onLogin }) => {
             setLoginError('')
             setPassword(e.target.value)
           }}
-          className="border border-black-300 rounded-md py-2 px-10 focus:outline-none focus:ring-2 text-center  focus:ring-black hover:bg-green-200"
+          className="border border-black-300 rounded-md py-2 px-10 focus:outline-none focus:ring-2 text-center text-black focus:ring-black hover:bg-green-200 "
         />
-        {/* Password visibility toggle */}
+  
         <div
           className="absolute inset-y-0 right-0 pr-3 flex items-center text-black-400 cursor-pointer"
           onClick={() => setShowPassword(!showPassword)}
@@ -96,7 +96,7 @@ const LoginForm = ({ onLogin }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="black"
             >
               <path
                 strokeLinecap="round"
@@ -127,7 +127,7 @@ const LoginForm = ({ onLogin }) => {
       </div>
       <p className="text-center font-semibold text-white">
         Are you new?{" "}
-        <a href="/pages/signUp" className="text-indigo-600 hover:underline">
+        <a href="/pages/signUp" className="text-black hover:underline">
           Create an Account
         </a>
       </p>

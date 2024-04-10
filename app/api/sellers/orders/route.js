@@ -8,7 +8,7 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-	const { buyer_id, product_id, quantity, status} = await request.json()
+	const { buyer_id, product_id, quantity, status,paymentMethod} = await request.json()
 	var { price } = await knex('products').where('id', product_id).first('price')
 	const totalPrice = price * quantity
 	try {
@@ -19,9 +19,10 @@ export async function POST(request) {
 				quantity,
 				total_price : totalPrice,
 				status,
+				payment_method:paymentMethod,
 
 			})
-			.returning('*')
+			// .returning('*')
 
 		return Response.json({ data: result })
 	} catch (e) {
