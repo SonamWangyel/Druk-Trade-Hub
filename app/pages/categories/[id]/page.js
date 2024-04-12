@@ -3,11 +3,10 @@
 
 import { useEffect, useState} from "react";
 import { useRouter } from "next/navigation";
-// import { UserContext } from "@/app/state/user-context";
+import { UserContext } from "@/app/state/user-context";
 
 export default function Category({ params }) {
     const router = useRouter()
-    // const {user}=useContext(UserContext)
     const [products, setProducts] = useState([]);
     const categoryId = params.id;
 
@@ -22,17 +21,17 @@ export default function Category({ params }) {
             }
         }
         getProducts();
-    }, [categoryId]);
+    }, []);
 
     return (
         <div className="min-h-screen bg-gray-100"style={{ backgroundImage: `url('https://i.pinimg.com/originals/cf/57/7d/cf577d963b77a87e3a8f7f9c67f8ee40.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <header className=" bg-gray-500/70 text-black  text-center font-bold  py-4 items-center font-serif relative">
-                <h1 className="text-2xl font-bold ">Products in Category {categoryId}</h1>
+            <header className=" bg-tranparent text-black  text-center font-bold  py-4 items-center font-serif relative p-3">
+                <h1 className="text-2xl font-bold py-2 px-2 flex-center justify-center">Products in category {categoryId}</h1>
             </header>
-            <div className="container mx-auto px-4 py-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4 px-3 inline-block flex items-center justify-center mx-auto ">
+            <div className="flex container mx-auto px-4 py-8">
+                <div className=" w-4/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4 px-3 inline-block flex items-center justify-center mx-auto ">
                     {products.map((product) => (
-                        <div key={product.id} className="bg-white-100 rounded-3xl overflow-hidden shadow-md flex flex-col flex items-center justify-center">
+                        <div key={product.id} className="bg-cyan-200/50 rounded-3xl overflow-hidden shadow-md flex flex-col flex items-center justify-center">
                             <img
                                 src={product.image_url}
                                 alt={product.name}
@@ -43,14 +42,18 @@ export default function Category({ params }) {
                                 <h2 className="text-lg font-bold mb-2 text-black">{product.name}</h2>
                                 <p className="text-gray-600 font-italic mb-2 text-indigo-800">{product.description}</p>
                                 <p className="text-black font-semibold">Nu. {product.price}</p>
-                                <button className="mt-4 bg-green-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                        onClick={()=>router.push("/pages/makeOrder")}
+                                <div className="justify-end" >
+                                <button className="mt-4 bg-green-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
+                                    onClick={() => router.push('/pages/makeOrder')}
                                 >Order Now</button>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
+                
             </div>
         </div>
     );
 }
+

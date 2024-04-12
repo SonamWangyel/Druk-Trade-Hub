@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 export default function MakeOrder() {
     const [buyerId, setBuyerId] = useState();
@@ -38,7 +38,7 @@ export default function MakeOrder() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 flex justify-center items-center" style={{ backgroundImage: `url('https://i.pinimg.com/originals/cf/57/7d/cf577d963b77a87e3a8f7f9c67f8ee40.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="min-h-screen bg-gray-100 flex justify-center items-center p-5" style={{ backgroundImage: `url('https://i.pinimg.com/originals/cf/57/7d/cf577d963b77a87e3a8f7f9c67f8ee40.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <form style={{ 
                 maxWidth: '400px', 
                 width: '100%', 

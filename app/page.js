@@ -59,14 +59,11 @@ const Home = () => {
         minHeight: "100vh"
       }}
     >
-      <Head>
-        <title>DRUK TRADE HUB - Home</title>
-      </Head>
       <main className="flex flex-col items-center">
         <div className="mt-10">
           {error && <p className="text-black text-2xl font-italic flex flex-col mt-2 pd-3">{error}</p>}
         </div>
-        <h1 className="text-3xl font-bold mb-8 text-stone-800 font-serif ">DRUK TRADE HUB</h1>
+  
         <div className="mx-w-1/3 md:flex  flex flex-col items-center p-8 bg-orange-500/50 rounded-lg">
           {!user && (
             <>
